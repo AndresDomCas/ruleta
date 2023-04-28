@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/faticon.ico" type="image/x-icon">
+    <title>Ruleta</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body onload="detectarAgent()">
+    <div class="container">
+        <div class="grid col-2 med-col-2 peq-col-1">
+            <div class="card">
+                <form>
+                    <textarea cols="20" rows="10" class="input" id="txtarea" placeholder="separa el texto por una coma(,)"></textarea>
+                </form>
+
+                <div id="ganadores" style="flex-direction: column;">
+                    <p class="texto-centrado">Resultados</p>
+
+                    <div  style="overflow-y: scroll; height: 50%;">
+                        <ul id="resganadores">
+                        </ul>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="card" >
+                <div id="containerRuleta" >
+                    <canvas id="canvas" style="z-index: 1;"></canvas>
+                    <div class="texto-centrado">
+                        <input type="button" class="boton" value="Girar" onclick="miRuleta.startAnimation();" />
+                    </div>
+                </div>
+                
+                <div id="showMessage" class="container">
+                    <p class="">Sin datos</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Winwheel.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+</html>
